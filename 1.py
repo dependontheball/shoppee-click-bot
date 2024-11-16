@@ -8,11 +8,8 @@ driver = webdriver.Chrome()
 driver.get('https://shopee.co.th')
 driver.implicitly_wait(2)
 
-
-input("hold ")
-btn1 = driver.find_element(By.ID, "btnSubmit")
-btn1.click()
+button = driver.find_element(By.XPATH, '//*[@id="modal"]/div[1]/div[1]/div/div[3]/div[1]/button')  # ระบุตาม id, class, หรืออื่นๆ
+ActionChains(driver).move_to_element(button).click().perform()
 
 
-# ปิดเบราว์เซอร์
-driver.quit()
+input("Press Enter to close the browser...")
